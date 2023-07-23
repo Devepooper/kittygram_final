@@ -16,3 +16,4 @@ class CatsAPITestCase(TestCase):
         """Проверка доступности списка задач."""
         response = self.client.get('/api/cats/')
         self.assertEqual(response.status_code, HTTPStatus.OK)
+
