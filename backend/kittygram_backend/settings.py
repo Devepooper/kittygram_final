@@ -11,7 +11,7 @@ SECRET_KEY = os.getenv('TOKEN', 'django-insecure-123')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['192.168.2.38','127.0.0.1','kittygramman.ddns.net']
+ALLOWED_HOSTS = ['158.160.8.152','127.0.0.1','kittygrammerscats.ddns.net']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -62,8 +62,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('POSTGRES_DB', 'django'),
         'USER': os.getenv('POSTGRES_USER', 'django_user'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'mysecretpassword'),
-        'HOST': os.getenv('DB_HOST', 'db'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', ''),
+        'HOST': os.getenv('DB_HOST', ''),
         'PORT': os.getenv('DB_PORT', 5432)
     }
 }
