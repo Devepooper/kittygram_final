@@ -1,13 +1,15 @@
+# насчет make договорились в пачке, что не буду применять 
+
 FROM python:3.9 
 
-WORKDIR /app 
+WORKDIR /app
 
-RUN pip install gunicorn==20.1.0 
+RUN pip install gunicorn==20.1.0
 
-COPY requirements.txt . 
+COPY requirements.txt .
 
-RUN pip install -r requirements.txt --no-cache-dir 
+RUN pip install -r requirements.txt --no-cache-dir
 
-COPY . . 
+COPY . .
 
-CMD ["gunicorn", "--bind", "0.0.0.0:9000", "kittygram_backend.wsgi"] 
+CMD ["gunicorn", "--bind", "0.0.0.0:9000", "kittygram_backend.wsgi"]

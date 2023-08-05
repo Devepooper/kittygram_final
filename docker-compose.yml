@@ -11,22 +11,26 @@ services:
     env_file: .env
     volumes:
       - pg_data_kitty:/var/lib/postgresql/data
+    restart: always
 
   backend:
     build: ./backend/
     env_file: .env
     volumes:
       - static_kitty:/backend_static
+    restart: always
 
   frontend:
     env_file: .env
     build: ./frontend/
+    restart: always
 
   gateway:
     build: ./gateway/
     volumes:
       - static_kitty:/staticfiles/
     ports:
-      - 9000:80
+      - ${GATEWAY_PORT}:80
     depends_on:
       - backend
+    restart: always
